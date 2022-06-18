@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>呈豐科技</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script/jquery-3.6.0.js"></script>
+  </head>
+  <style>
+    .slide-show {
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      height: 70%;
+      /* width: 100%; */
+    }
+    .slide-show > img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .slide-show {
+        width: 100%;
+        height: 60vh;
+        /* margin-bottom: 24px; */
+      }
+    } ;
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('.slide-show').each(function () {
+        let slideImgs = $(this).find('img');
+        let slideImgsCount = slideImgs.length;
+        let currentIndex = 0;
+        slideImgs.eq(currentIndex).fadeIn();
+        setInterval(showNextSlide, 3500);
+        function showNextSlide() {
+          let nextIndex = (currentIndex + 1) % slideImgsCount;
+          slideImgs.eq(currentIndex).fadeOut();
+          slideImgs.eq(nextIndex).fadeIn();
+          currentIndex = nextIndex;
+        }
+      });
+    });
+  </script>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img class="img-fluid" src="./asset/logo.png" alt="公司商標"
+        /></a>
+
+        <!-- toggle button for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- toggle button end -->
+
+        <!-- navbar-links -->
+        <div class="collapse navbar-collapse justify-content-end" id="main-nav">
+          <ul class="navbar-nav align-items-center fs-5">
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                aria-current="page"
+                href="about.html"
+                >公司簡介</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">採購部</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="sandbox.html">沙箱系統</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">聯絡我們</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="security.html">資訊安全</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- 主要大圖以及內容區 -->
+    <section id="main-content" class="mb-sm-3">
+      <div class="container mb-3">
+        <div class="row">
+          <!-- 左邊圖片(輪播圖效果) -->
+          <div class="col-sm-12 col-md-6 mb-3">
+            <div class="slide-show d-flex align-items-center">
+              <img class="img-fluid" src="./asset/ad_p01.png" alt="" />
+              <img class="img-fluid" src="./asset/ad_p02.png" alt="" />
+              <img class="img-fluid" src="./asset/ad_p03.png" alt="" />
+            </div>
+            <div class="">
+              <img class="img-fluid" src="./asset/mylogos.png" alt="" />
+            </div>
+          </div>
+          <!-- 左邊圖片結束 -->
+          <!-- 右邊消息區 -->
+          <div class="col-sm-12 col-md-6">
+            <div class="card p-1 border-info border-2 mb-2">
+              <h3 class="d-flex card-title align-items-center">
+                最新消息
+                <span class="fs-6 text-danger">NEWS</span>
+              </h3>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    2021/04/06 賀鴻寬科技獲VMware安全方案最佳經銷夥伴
+                  </li>
+                  <li class="list-group-item">
+                    2021/12/03 軟體標1100204 已上架!!資料更新完成
+                  </li>
+                  <li class="list-group-item">
+                    2021/11/25 週邊標 LP5-110012 已上架!!資料更新完成
+                  </li>
+                  <li class="list-group-item">
+                    2021/05/04 軟體標 1100201 已上架!!資料更新完成
+                  </li>
+                  <li class="list-group-item">
+                    2021/01/18 電腦設備用品(商用電腦)LP5-109023
+                    已上架!!資料更新完成
+                  </li>
+                  <li class="list-group-item">
+                    2020/12/15 耗材標 LP5-109039 已上架!!資料更新完成
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card p-1 border-info border-2 mb-2">
+              <h3 class="d-flex align-items-center">
+                活動剪影<span class="fs-6 text-danger">Activities Tidbit</span>
+              </h3>
+
+              <div class="card-body">
+                <div class="container-fluid">
+                  <div class="row justify-content-between">
+                    <!-- card-1 -->
+                    <div class="card col-4 p-0" style="">
+                      <img
+                        src="./asset/news3.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">2019 IEEE國際圖像處理會議</h5>
+                      </div>
+                    </div>
+
+                    <!-- card2 -->
+                    <div class="card col-4 p-0" style="">
+                      <img
+                        src="./asset/news2.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          揭開DNS網路安全問題與解決對策
+                        </h5>
+                      </div>
+                    </div>
+
+                    <!-- card3 -->
+                    <div class="card col-4 p-0" style="">
+                      <img
+                        src="./asset/news1.jpg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">保護最關鍵 備援儲存全攻略</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 最新活動 -->
+            <div class="card border border-info border-2 container">
+              <h3 class="d-flex align-items-center">
+                最新活動<span class="fs-6 text-danger">News Activities</span>
+              </h3>
+              <div class="card-body row">
+                <img
+                  class="img-fluid col-4"
+                  src="./asset/線上防疫.jpg"
+                  alt=""
+                />
+                <img
+                  class="img-fluid col-4"
+                  src="./asset/資訊安全.jpg"
+                  alt=""
+                />
+                <img
+                  class="img-fluid col-4"
+                  src="./asset/通過認證.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- 右邊消息區結束 -->
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-light">
+      <div class="container p-3">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-center">
+            <div class="footer__card-right">
+              <img src="./asset/鴻鈞科技.png" alt="" />
+            </div>
+            <div class="footer__card-left fs-6">
+              <p class="m-0">鴻鈞科技有限公司</p>
+              <p class="m-0">臺北市信義區忠孝東路5段770號5樓</p>
+              <p class="m-0">北區辦事處：新北市三峽區大學路151號圖資大樓2樓</p>
+              <p class="m-0">電話：(02)2672-8507 / 傳真：(02)2672-8506</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-center">
+            <div class="footer__card-right">
+              <img src="./asset/鴻寬科技.png" alt="" />
+            </div>
+            <div class="footer__card-left fs-6">
+              <p class="m-0">鴻寬科技有限公司</p>
+              <p class="m-0">臺南市永成路二段771號</p>
+              <p class="m-0">中區辦事處：臺中市西屯區市政北二路238號30樓之3</p>
+              <p class="m-0">電話：(06)296-5568 / 傳真：(06)296-1668</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-center">
+            <div class="footer__card-right">
+              <img src="./asset/呈豐科技.png" alt="" />
+            </div>
+            <div class="footer__card-left">
+              <p class="m-0">呈豐科技有限公司</p>
+              <p class="m-0">臺南市永成路二段769號</p>
+              <p class="m-0">南區辦事處：臺南市永成路二段769號</p>
+              <p class="m-0">電話：(06)296-5186 / 傳真：(06)296-5185</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

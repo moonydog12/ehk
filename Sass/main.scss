@@ -1,0 +1,16 @@
+$primary: #014099;
+$secondary: #7b9cc9;
+$warning: #e48316;
+$info: #b1bcd9;
+$success: #528457;
+@import '../node_modules/bootstrap/scss/_functions.scss';
+@import '../node_modules/bootstrap/scss/_variables.scss';
+
+$custom-theme-colors: (
+  'pl': #f2ebfa,
+  'pd': #522192,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
